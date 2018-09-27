@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.cnabcpm.facedetection.FaceViewMedel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="261dp">
+
+                <ImageView
+                    android:id="@+id/iv_one_face"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:scaleType="centerCrop"
+                    app:setBitmaps="@{viewModel.oneFace}" />
+
+                <ImageView
+                    android:id="@+id/iv_one_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/select_cram"
+                    app:visibleGone="@{!viewModel.isHaveOneFace}" />
+
+                <ImageView
+                    android:id="@+id/iv_one_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/delete_picture"
+                    android:visibility="gone"
+                    app:visibleGone="@{viewModel.isHaveOneFace}" />
+
+                <TextView
+                    android:id="@+id/tv_one_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="点击拍摄"
+
+                    android:textSize="18dp"
+                    app:visibleGone="@{!viewModel.isHaveOneFace}"
+
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="261dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp">
+
+                <ImageView
+                    android:id="@+id/iv_two_face"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:scaleType="centerCrop"
+                    app:setBitmaps="@{viewModel.twoFace}" />
+
+                <ImageView
+                    android:id="@+id/iv_two_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/select_cram"
+                    app:visibleGone="@{!viewModel.isHaveTwoFace}" />
+
+                <ImageView
+                    android:id="@+id/iv_two_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/delete_picture"
+                    android:visibility="gone"
+                    app:visibleGone="@{viewModel.isHaveTwoFace}" />
+
+                <TextView
+                    android:id="@+id/tv_two_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="点击拍摄"
+
+                    android:textSize="18sp"
+                    app:visibleGone="@{!viewModel.isHaveTwoFace}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="261dp">
+
+                <ImageView
+                    android:id="@+id/iv_three_face"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:setBitmaps="@{viewModel.threeFace}" />
+
+                <ImageView
+                    android:id="@+id/iv_three_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/select_cram"
+                    app:visibleGone="@{!viewModel.isHaveThreeFace}" />
+
+                <ImageView
+                    android:id="@+id/iv_three_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/delete_picture"
+                    android:visibility="gone"
+                    app:visibleGone="@{viewModel.isHaveThreeFace}" />
+
+                <TextView
+                    android:id="@+id/tv_three_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="点击拍摄"
+
+                    android:textSize="18sp"
+                    app:visibleGone="@{!viewModel.isHaveThreeFace}" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
